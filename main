@@ -1,4 +1,55 @@
 from addition import add
-
+from subtraction import subtract
+from multiplication import multiply
+from division import divide
 
 print(add(1,5))
+print(subtract(5,1))
+print(multiply(5,10))
+print(divide(6,6))
+
+
+operations = ['+', '-', '*', '/']
+
+while True:
+    print('Calculator')
+    print('+ for Addition')
+    print('- for Subtraction')
+    print('* for Multiplication')
+    print('/ for Division')
+    print('_ to exit Calculator')
+
+
+
+
+    choice = input('Choose an operation: ')
+
+    if choice in operations:
+        try:
+            a = eval(input("First Number: "))
+            b = eval(input('Second NumbeR: '))
+
+        except (NameError, ValueError) as e:
+            print('Not a number')
+            continue
+
+        
+        if choice == '+':
+            print(f'{a} + {b} =', add(a,b))
+
+        elif choice == '-':
+            print(f'{a} - {b} =', subtract(a,b))
+        elif choice == '*':
+            print(f'{a} * {b} =', multiply(a,b))
+        elif choice == '/':
+            if b != 0:
+                print(f'{a} / {b} =', divide(a,b))
+            else:
+                print('Cannot Divide by Zero')
+        print('\n')
+
+    elif choice == '_':
+        break
+    
+    else:
+        print('Wrong choice. Not in options/ Try again\n')
