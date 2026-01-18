@@ -1,16 +1,4 @@
-#main program
+from addition import add
 
 
-
-
-
-def main():
-  while True:
-    break
-
-
-
-
-
-if __name__ == "__main__":
-  main()
+print(add(1,5))
